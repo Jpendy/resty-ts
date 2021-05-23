@@ -11,9 +11,11 @@ const App: React.FC = () => {
   const [reqResponse, setReqResponse] = useState<Array<object> | object>([])
   const [error, setError] = useState<string | null>(null)
 
-  const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>): void => setUrl(e.target.value)
+  type inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => void
 
-  const handleMethodChange = (e: React.ChangeEvent<HTMLInputElement>): void => setMethod(e.target.value)
+  const handleUrlChange: inputChangeHandler = e => setUrl(e.target.value)
+
+  const handleMethodChange: inputChangeHandler = e => setMethod(e.target.value)
 
   const handleReqBodyChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => setReqBody(e.target.value)
 
