@@ -1,5 +1,5 @@
 
-const bodyMethods: Array<string> = ['POST', 'PUT']
+const bodyMethods: Array<string> = ['POST', 'PUT', 'PATCH']
 
 export default function makeRequest(url: string, method: string, body: string): Promise<Array<object> | object> {
 
